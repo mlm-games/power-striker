@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=<PlaceHolderName>
-GenericName=<PlaceHolderName>
+Name=Smash-with-power
+GenericName=Smash-with-power
 Comment=<PlaceholderShortDesc>
-Exec=<placeholdername> %F
+Exec=smash-with-power %F
 Icon=${SNAP}/meta/gui/icon.png
 Terminal=false
 Type=Application
