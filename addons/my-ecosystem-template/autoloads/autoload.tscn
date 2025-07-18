@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h30mob8qlss4"]
+
+[ext_resource type="Script" uid="uid://ixpppcuhpbdm" path="res://addons/my-ecosystem-template/autoloads/autoload.gd" id="1_f5mab"]
+
+[node name="Autoload" type="Node"]
+script = ExtResource("1_f5mab")
