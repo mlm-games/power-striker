@@ -36,6 +36,20 @@ static func shake_camera(camera: Camera2D, strength: float = 10.0, duration: flo
 	_screen_shake_tween.tween_property(camera, "offset", Vector2.ZERO, 1.0/60.0)
 
 
+static func shake_camera_3d(camera: Camera3D, strength: float = 10.0, duration: float = 0.2) -> void:
+	_screen_shake_tween = camera.create_tween()
+	var shake_count = int(duration * 60) # 60 shakes per second
+	
+	for i in shake_count:
+		var decay = 1.0 - (float(i) / shake_count)
+		var offset = randf_range(-strength, strength) * decay
+		_screen_shake_tween.tween_property(camera, "h_offset", offset, 1.0/60.0)
+		_screen_shake_tween.parallel().tween_property(camera, "v_offset", offset, 1.0/60.0)
+		
+	
+	_screen_shake_tween.tween_property(camera, "h_offset", Vector2.ZERO, 1.0/60.0)
+	_screen_shake_tween.parallel().tween_property(camera, "h_offset", Vector2.ZERO, 1.0/60.0)
+
 ## Creates a brief chromatic aberration "pulse" effect using a shader.
 ##[br][br]
 ## [b]Setup Required:[/b] This function requires a [CanvasLayer] in your scene containing

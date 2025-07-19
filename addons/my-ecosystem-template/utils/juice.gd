@@ -72,7 +72,7 @@ static func pop_in(node: Node2D, duration: float = 0.3, from_scale: float = 0.0)
 ## [param amount]: The maximum rotation in degrees for the wobble.
 ##[br]
 ## [param duration]: The total time in seconds for the animation.
-static func wobble(node: Node2D, amount: float = 10.0, duration: float = 0.5) -> Tween:
+static func wobble(node: CanvasItem, amount: float = 10.0, duration: float = 0.5) -> Tween:
 	var tween = node.create_tween()
 	tween.set_loops(2)
 	tween.tween_property(node, "rotation_degrees", amount, duration * 0.25)
