@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bqkcvdot8ygo3"]
+[gd_scene load_steps=21 format=4 uid="uid://bqkcvdot8ygo3"]
 
 [ext_resource type="Script" uid="uid://yoyw73b2ocos" path="res://game/scenes/world.gd" id="1_2gpe7"]
 [ext_resource type="ArrayMesh" uid="uid://cu8yghv08chlv" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/red/spring_pad_red.obj" id="1_6pf46"]
@@ -66,6 +66,12 @@ colors = PackedColorArray(0.85490197, 0.18039216, 0.1254902, 1, 0.9791781, 0.882
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nepmf"]
 gradient = SubResource("Gradient_y08k3")
+
+[sub_resource type="Curve2D" id="Curve2D_wkjk4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 233, 0)
+}
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_wkjk4"]
 resource_name = "hit_test"
@@ -237,6 +243,12 @@ unique_name_in_owner = true
 [node name="PowerBarRight" type="Marker2D" parent="UI/UI/PowerBar"]
 unique_name_in_owner = true
 position = Vector2(233, 0)
+
+[node name="Path2D" type="Path2D" parent="UI/UI/PowerBar"]
+curve = SubResource("Curve2D_wkjk4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="UI/UI/PowerBar/Path2D"]
+unique_name_in_owner = true
 
 [node name="TutorialLabel" type="RichTextLabel" parent="UI"]
 offset_left = 40.0
