@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bqkcvdot8ygo3"]
+[gd_scene load_steps=41 format=4 uid="uid://bqkcvdot8ygo3"]
 
 [ext_resource type="Script" uid="uid://yoyw73b2ocos" path="res://game/scenes/world.gd" id="1_2gpe7"]
 [ext_resource type="ArrayMesh" uid="uid://cu8yghv08chlv" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/red/spring_pad_red.obj" id="1_6pf46"]
@@ -16,8 +16,11 @@
 [ext_resource type="Script" uid="uid://mtku0ncgoecu" path="res://game/scenes/ui_manager.gd" id="10_7m8jt"]
 [ext_resource type="Texture2D" uid="uid://dsc07yp36y8ww" path="res://assets/kenney_ui-pack/PNG/Grey/Double/arrow_basic_n.png" id="10_621cg"]
 [ext_resource type="Script" uid="uid://yag0n43o56do" path="res://game/scenes/power_bar.gd" id="10_q3m2p"]
+[ext_resource type="Texture2D" uid="uid://m2q08j8egr51" path="res://assets/kenney_ui-pack/Vector/Extra/input_square.svg" id="11_scav7"]
 [ext_resource type="Script" uid="uid://bfnv0fy3hlqcp" path="res://game/scenes/main_camera.gd" id="15_7m8jt"]
+[ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="16_hk75s"]
 [ext_resource type="Environment" uid="uid://brmx0frt2rbxf" path="res://assets/env.tres" id="18_cvjtv"]
+[ext_resource type="Script" uid="uid://cnfh1rl7a17mv" path="res://addons/my-ecosystem-template/transitions/popup_animator.gd" id="19_6s0f1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nepmf"]
 size = Vector3(1, 0.99072266, 1)
@@ -314,6 +317,18 @@ anchor_bottom = 0.5
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="UIManager/UI"]
+layout_mode = 0
+offset_left = -273.0
+offset_top = 257.0
+offset_right = -25.0
+offset_bottom = 311.0
+texture = ExtResource("11_scav7")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
 [node name="PowerBar" type="TextureProgressBar" parent="UIManager/UI"]
 unique_name_in_owner = true
 layout_mode = 0
@@ -323,7 +338,7 @@ offset_right = -33.0
 offset_bottom = 304.0
 fill_mode = 6
 nine_patch_stretch = true
-texture_under = SubResource("GradientTexture2D_nepmf")
+texture_over = SubResource("GradientTexture2D_nepmf")
 script = ExtResource("10_q3m2p")
 
 [node name="PowerBarLeft" type="Marker2D" parent="UIManager/UI/PowerBar"]
@@ -349,9 +364,9 @@ flip_v = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UIManager/UI"]
 layout_mode = 0
-offset_left = -843.0
+offset_left = -1144.0
 offset_top = -304.0
-offset_right = -402.0
+offset_right = -9.0
 offset_bottom = -212.0
 texture = ExtResource("7_y08k3")
 patch_margin_left = 20
@@ -372,26 +387,32 @@ layout_mode = 2
 text = "Strength
 Hit the button harder!"
 icon = ExtResource("8_qur0g")
+script = ExtResource("16_hk75s")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
 [node name="Button2" type="Button" parent="UIManager/UI/VBoxContainer"]
 layout_mode = 2
 text = "Dampness
 The springs will work better"
 icon = ExtResource("9_eqg12")
+script = ExtResource("16_hk75s")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
 [node name="Button3" type="Button" parent="UIManager/UI/VBoxContainer"]
 layout_mode = 2
 text = "Aero dynamics
 box flies 10% faster"
 icon = ExtResource("10_621cg")
+script = ExtResource("16_hk75s")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
 [node name="RoundEndPanel" type="Panel" parent="UIManager/UI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -823.0
-offset_top = -126.0
-offset_right = -424.0
-offset_bottom = 208.0
+offset_left = -1105.0
+offset_top = -183.0
+offset_right = -387.0
+offset_bottom = 292.0
 
 [node name="ScoreText" type="RichTextLabel" parent="UIManager/UI/RoundEndPanel"]
 unique_name_in_owner = true
@@ -400,6 +421,11 @@ offset_left = -329.0
 offset_top = -198.0
 offset_right = -289.0
 offset_bottom = -158.0
+
+[node name="PopupAnimator" type="Node" parent="UIManager/UI/RoundEndPanel" node_paths=PackedStringArray("target_node")]
+script = ExtResource("19_6s0f1")
+target_node = NodePath("..")
+metadata/_custom_type_script = "uid://cnfh1rl7a17mv"
 
 [node name="TutorialLabel" type="RichTextLabel" parent="UIManager"]
 unique_name_in_owner = true

@@ -33,6 +33,10 @@ LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 
 enabled=PackedStringArray("res://addons/basic_settings_menu/plugin.cfg", "res://addons/layer_names/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://dlef7dqqthbl"
+
 [input]
 
 toggle_fullscreen={

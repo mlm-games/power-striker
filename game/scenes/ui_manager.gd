@@ -15,7 +15,7 @@ func _on_height_updated(height: float):
 
 func reset_ui():
 	tutorial_label.visible = true
-	round_end_panel.visible = false
+	round_end_panel.get_node("PopupAnimator").animate_out()
 	score_label.text = "Height: 0 m"
 	power_bar.start_swinging()
 	
@@ -27,3 +27,4 @@ func hide_tutorial():
 func show_round_over(final_score: float):
 	%ScoreText.text = "Max Height: %d m" % int(final_score)
 	round_end_panel.visible = true
+	round_end_panel.get_node("PopupAnimator").animate_in()
