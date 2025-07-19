@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Smash-with-power"
+config/name="power-delivery"
+config/description="Deliver goods using tried and tested methods!"
 run/main_scene="uid://bqkcvdot8ygo3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
@@ -25,8 +26,8 @@ SettingsApplier="*res://addons/basic_settings_menu/settings_applier.gd"
 UiAudioM="*res://addons/my-ecosystem-template/autoloads/ui_audio_manager.gd"
 AudioM="*res://addons/my-ecosystem-template/autoloads/autoload_audio_manager.gd"
 PauseMenu="*res://addons/my-ecosystem-template/pause-menu/pause_menu.tscn"
-LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 A="*res://addons/my-ecosystem-template/autoloads/autoload.tscn"
+LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 
 [editor_plugins]
 
@@ -68,6 +69,10 @@ locale/translations=PackedStringArray("res://locale/translations.ar.translation"
 2d_navigation/layer_1="World"
 2d_physics/layer_10="GameBounds"
 2d_navigation/layer_10="GameBounds"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 
