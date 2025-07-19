@@ -20,8 +20,10 @@ func reset_ui():
 	power_bar.start_swinging()
 	
 func hide_tutorial():
-	tutorial_label.visible = false
+	var tween = create_tween()
+	tween.tween_property(tutorial_label, "modulate", Color.TRANSPARENT, 0.5)
+	#tutorial_label.visible = false
 	
 func show_round_over(final_score: float):
-	round_end_panel.get_node("ScoreText").text = "Max Height: %d m" % int(final_score)
+	%ScoreText.text = "Max Height: %d m" % int(final_score)
 	round_end_panel.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bqkcvdot8ygo3"]
+[gd_scene load_steps=38 format=4 uid="uid://bqkcvdot8ygo3"]
 
 [ext_resource type="Script" uid="uid://yoyw73b2ocos" path="res://game/scenes/world.gd" id="1_2gpe7"]
 [ext_resource type="ArrayMesh" uid="uid://cu8yghv08chlv" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/red/spring_pad_red.obj" id="1_6pf46"]
@@ -17,15 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://dsc07yp36y8ww" path="res://assets/kenney_ui-pack/PNG/Grey/Double/arrow_basic_n.png" id="10_621cg"]
 [ext_resource type="Script" uid="uid://yag0n43o56do" path="res://game/scenes/power_bar.gd" id="10_q3m2p"]
 [ext_resource type="Script" uid="uid://bfnv0fy3hlqcp" path="res://game/scenes/main_camera.gd" id="15_7m8jt"]
+[ext_resource type="Environment" uid="uid://brmx0frt2rbxf" path="res://assets/env.tres" id="18_cvjtv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nepmf"]
 size = Vector3(1, 0.99072266, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6rj"]
-emission_enabled = true
-emission = Color(0.25789198, 0.27394545, 0.42531568, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_uu6rj"]
+size = Vector3(1, 0.36035156, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7m8jt"]
 size = Vector3(1, 0.36035156, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8wq8"]
@@ -101,24 +101,10 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("Visual3D/Launcher")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.6666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"on_hit"
-}]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual3D/Launcher")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.6333333),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -150,6 +136,22 @@ _data = {
 &"reset_rot": SubResource("Animation_nepmf")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6rj"]
+emission_enabled = true
+emission = Color(0.25789198, 0.27394545, 0.42531568, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cvjtv"]
+plane = Plane(1, 1, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_twmbl"]
+plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_og4pm"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_scav7"]
+plane = Plane(1, 0, 0, 0)
+
 [sub_resource type="Gradient" id="Gradient_y08k3"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.35507247, 0.5, 0.6666667, 1)
@@ -171,7 +173,7 @@ script = ExtResource("1_2gpe7")
 
 [node name="LaunchableObject" type="RigidBody3D" parent="Visual3D"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, -1.4754212)
 script = ExtResource("2_f8f7t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/LaunchableObject"]
@@ -179,40 +181,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022719383, -1.5644126, -3.
 shape = SubResource("BoxShape3D_nepmf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Visual3D/LaunchableObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027865171, -2.0658846, -3.5970047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23085666, -2.0658846, -4.5286455)
 mesh = ExtResource("4_wkjk4")
 skeleton = NodePath("../../..")
 
 [node name="HitParticles" type="GPUParticles3D" parent="Visual3D/LaunchableObject"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3672302, -3.604117)
 
 [node name="TrailParticles" type="GPUParticles3D" parent="Visual3D/LaunchableObject"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1740751, -3.7000315)
 
 [node name="Audio" type="Node" parent="Visual3D/LaunchableObject"]
 unique_name_in_owner = true
 script = ExtResource("3_eqg12")
 
-[node name="Floor" type="CSGBox3D" parent="Visual3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7324066, -2.554069, -4.00531)
-use_collision = true
-size = Vector3(17.23822, 1, 12.613159)
-material = SubResource("StandardMaterial3D_uu6rj")
-
-[node name="BackWall" type="CSGBox3D" parent="Visual3D"]
-transform = Transform3D(1, 0, 0, 0, -0.014101803, -0.9999006, 0, 0.9999006, -0.014101803, -3.9979076, 7.8914948, -10.867951)
-size = Vector3(18.838345, 1, 21.13031)
-
-[node name="Left" type="CSGBox3D" parent="Visual3D"]
-transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, -12.743392, 4.3921394, -4.2100563)
-size = Vector3(14.671356, 1, 12.613159)
-
-[node name="RightWall" type="CSGBox3D" parent="Visual3D"]
-transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, 5.1884623, 4.387636, -4.356015)
-size = Vector3(14.671356, 1, 12.613159)
-
 [node name="Spring" type="RigidBody3D" parent="Visual3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Visual3D/Spring"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1104155, -3.5647886)
@@ -227,8 +214,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/Button"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056732893, -2.8187604, -1.6430279)
-shape = SubResource("BoxShape3D_uu6rj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10020614, -2.8187604, -1.8469821)
+shape = SubResource("BoxShape3D_7m8jt")
 
 [node name="Button" type="MeshInstance3D" parent="Visual3D/Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1903398, -3.0641074, -2)
@@ -237,7 +224,7 @@ skeleton = NodePath("../../..")
 
 [node name="Launcher" type="RigidBody3D" parent="Visual3D"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, -3.8088028)
 gravity_scale = 0.0
 script = ExtResource("7_q3m2p")
 
@@ -247,7 +234,7 @@ shape = SubResource("BoxShape3D_wkjk4")
 disabled = true
 
 [node name="Hammer" type="MeshInstance3D" parent="Visual3D/Launcher"]
-transform = Transform3D(-8.223969e-07, 7.6838527, -0.8314768, 1.2554949e-07, -0.8314768, -7.6838527, -7.7287087, -8.311308e-07, -3.6345003e-08, 1.5279758, -1.4281684, -2.1616025)
+transform = Transform3D(-8.223969e-07, 7.6838527, -0.8314768, 1.2554949e-07, -0.8314768, -7.6838527, -7.7287087, -8.311308e-07, -3.6345003e-08, 1.5279758, -1.4281684, 1.4201767)
 mesh = ExtResource("3_uu6rj")
 skeleton = NodePath("../../..")
 
@@ -261,8 +248,53 @@ libraries = {
 &"": SubResource("AnimationLibrary_nepmf")
 }
 
+[node name="FloorWall" type="StaticBody3D" parent="Visual3D"]
+
+[node name="Floor" type="CSGBox3D" parent="Visual3D/FloorWall"]
+transform = Transform3D(0.99999166, -0.0040840595, 0, 0.0040840595, 0.99999166, 0, 0, 0, 1, -3.7324066, -2.554069, -4.00531)
+use_collision = true
+size = Vector3(17.23822, 1, 12.613159)
+material = SubResource("StandardMaterial3D_uu6rj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Visual3D/FloorWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6915045, -3.1352534, -7.5871124)
+shape = SubResource("WorldBoundaryShape3D_cvjtv")
+
+[node name="BackWall" type="StaticBody3D" parent="Visual3D"]
+
+[node name="BackWall" type="CSGBox3D" parent="Visual3D/BackWall"]
+transform = Transform3D(1, 0, 0, 0, -0.014101803, -0.9999006, 0, 0.9999006, -0.014101803, -3.9979076, 7.8914948, -10.867951)
+size = Vector3(18.838345, 1, 21.13031)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Visual3D/BackWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6915045, 6.984026, -11.926697)
+shape = SubResource("WorldBoundaryShape3D_twmbl")
+
+[node name="LeftWall" type="StaticBody3D" parent="Visual3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/LeftWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.992052, 6.5395546, -6.6453953)
+shape = SubResource("WorldBoundaryShape3D_og4pm")
+disabled = true
+
+[node name="Left" type="CSGBox3D" parent="Visual3D/LeftWall"]
+transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, -12.743392, 4.3921394, -4.2100563)
+size = Vector3(14.671356, 1, 12.613159)
+
+[node name="RightWall" type="StaticBody3D" parent="Visual3D"]
+
+[node name="RightWall" type="CSGBox3D" parent="Visual3D/RightWall"]
+transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, 5.1884623, 4.387636, -4.356015)
+size = Vector3(14.671356, 1, 12.613159)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/RightWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2352614, 6.44114, -7.2569246)
+shape = SubResource("WorldBoundaryShape3D_scav7")
+disabled = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.111847, 0)
+visible = false
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -356,8 +388,18 @@ icon = ExtResource("10_621cg")
 [node name="RoundEndPanel" type="Panel" parent="UIManager/UI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -823.0
+offset_top = -126.0
+offset_right = -424.0
+offset_bottom = 208.0
+
+[node name="ScoreText" type="RichTextLabel" parent="UIManager/UI/RoundEndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -329.0
+offset_top = -198.0
+offset_right = -289.0
+offset_bottom = -158.0
 
 [node name="TutorialLabel" type="RichTextLabel" parent="UIManager"]
 unique_name_in_owner = true
@@ -383,3 +425,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1903398, 1.0641074, 0)
 current = true
 script = ExtResource("15_7m8jt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("18_cvjtv")

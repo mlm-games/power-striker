@@ -47,8 +47,8 @@ static func shake_camera_3d(camera: Camera3D, strength: float = 10.0, duration: 
 		_screen_shake_tween.parallel().tween_property(camera, "v_offset", offset, 1.0/60.0)
 		
 	
-	_screen_shake_tween.tween_property(camera, "h_offset", Vector2.ZERO, 1.0/60.0)
-	_screen_shake_tween.parallel().tween_property(camera, "h_offset", Vector2.ZERO, 1.0/60.0)
+	_screen_shake_tween.tween_property(camera, "h_offset", 0.0, 1.0/60.0)
+	_screen_shake_tween.parallel().tween_property(camera, "h_offset", 0.0, 1.0/60.0)
 
 ## Creates a brief chromatic aberration "pulse" effect using a shader.
 ##[br][br]

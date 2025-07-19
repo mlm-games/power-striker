@@ -32,7 +32,7 @@ func _exit_tree() -> void:
 func _update_layer_names() -> void:
 	wait_tickets += 1
 	var wait_number := wait_tickets
-	await A.tree.create_timer(INPUT_WAIT_SECONDS).timeout
+	await get_tree().create_timer(INPUT_WAIT_SECONDS).timeout
 	if wait_number != wait_tickets: return
 	
 	layer_settings_cache.clear()

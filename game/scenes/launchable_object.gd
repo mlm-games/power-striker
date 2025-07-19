@@ -32,12 +32,12 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if not is_airborne:
 		return
 	
-	var effective_gravity = state.total_gravity * gravity_multiplier
-	state.apply_central_force(effective_gravity / state.inverse_mass)
+ 
+	gravity_scale *= gravity_multiplier
 	
-	var drag_force = -state.linear_velocity * state.linear_velocity.length() * air_resistance_factor
-	state.apply_central_force(drag_force)
-	
+	#var drag_force = -state.linear_velocity * state.linear_velocity.length() * air_resistance_factor
+	#state.apply_central_force(drag_force)
+	#
 	var current_height = global_position.y - initial_position.y
 	if current_height > max_height_reached:
 		max_height_reached = current_height

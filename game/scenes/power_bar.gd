@@ -20,10 +20,10 @@ func start_swinging():
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_loops()
 	
 	tween.tween_property(path_follow, "progress_ratio", 1.0, swing_duration)
-	tween.tween_property(%Arrow, "global_position", %PowerBarRight.global_position, swing_duration)
+	tween.parallel().tween_property(%Arrow, "global_position", %PowerBarRight.global_position, swing_duration)
 	
 	tween.tween_property(path_follow, "progress_ratio", 0.0, swing_duration)
-	tween.tween_property(%Arrow, "global_position", %PowerBarLeft.global_position, swing_duration)
+	tween.parallel().tween_property(%Arrow, "global_position", %PowerBarLeft.global_position, swing_duration)
 
 
 func stop_and_request_hit():
@@ -34,4 +34,5 @@ func stop_and_request_hit():
 	var inverse_power = abs(path_follow.progress_ratio - 0.5) * 2
 	var final_power_ratio = 1.0 - inverse_power
 	
+	final_power_ratio += 0.3 #To not feel low on start
 	hit_requested.emit(final_power_ratio)
