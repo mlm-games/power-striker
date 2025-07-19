@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="16"
-   height="16"
-   viewBox="0 0 16 16"
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="27.125"
-     inkscape:cx="4.8479263"
-     inkscape:cy="6.8018433"
+     inkscape:zoom="13.5625"
+     inkscape:cx="1.2903226"
+     inkscape:cy="20.092166"
      inkscape:window-width="1536"
      inkscape:window-height="902"
      inkscape:window-x="0"
@@ -69,34 +69,38 @@
        ry="0.49530059"
        transform="rotate(45)" />
     <g
-       id="g3"
-       transform="translate(-0.1829174,-2.5590417)">
-      <path
-         style="fill:#f2f2f2;stroke:#501616;stroke-width:0.944203;stroke-linecap:butt;stroke-linejoin:round;paint-order:fill markers stroke"
-         d="M 8.1829174,3.7795277 4.9097505,5.6692915 8.1829174,7.5590553 11.456084,5.6692915 Z"
-         id="path2" />
-      <path
-         style="fill:#ffe6d5;stroke:#501616;stroke-width:0.944203;stroke-linecap:butt;stroke-linejoin:round;paint-order:fill markers stroke"
-         d="M 8.1829174,7.5590553 V 11.338583 L 11.456084,9.4488192 V 5.6692915 Z"
-         id="path3" />
+       id="g1"
+       transform="matrix(2.0684898,0,0,2.0684898,-0.54791964,-0.54791846)">
+      <g
+         id="g3"
+         transform="translate(-0.1829174,-2.5590417)">
+        <path
+           style="fill:#f2f2f2;stroke:#501616;stroke-width:0.944203;stroke-linecap:butt;stroke-linejoin:round;paint-order:fill markers stroke"
+           d="M 8.1829174,3.7795277 4.9097505,5.6692915 8.1829174,7.5590553 11.456084,5.6692915 Z"
+           id="path2" />
+        <path
+           style="fill:#ffe6d5;stroke:#501616;stroke-width:0.944203;stroke-linecap:butt;stroke-linejoin:round;paint-order:fill markers stroke"
+           d="M 8.1829174,7.5590553 V 11.338583 L 11.456084,9.4488192 V 5.6692915 Z"
+           id="path3" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#path3"
+           id="use3"
+           transform="matrix(-1,0,0,1,16.365836,-3.9538573e-8)" />
+      </g>
       <use
          x="0"
          y="0"
-         xlink:href="#path3"
-         id="use3"
-         transform="matrix(-1,0,0,1,16.365836,-3.9538573e-8)" />
+         xlink:href="#g3"
+         id="use4"
+         transform="translate(-3.7419352,6)" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#use4"
+         id="use5"
+         transform="translate(7.4838704)" />
     </g>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3"
-       id="use4"
-       transform="translate(-3.7419352,6)" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#use4"
-       id="use5"
-       transform="translate(7.4838704)" />
   </g>
 </svg>
