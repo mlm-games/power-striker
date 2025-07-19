@@ -9,6 +9,8 @@ extends Node3D
 
 var arrow_mvment_tween : Tween
 
+@onready var current_height : float = %WoodenBox.position.y
+
 func _ready() -> void:
 	arrow_mvment_tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_loops()
 	arrow_mvment_tween.tween_property(%Arrow, "global_position", %PowerBarRight.global_position, 0.5)
@@ -16,7 +18,7 @@ func _ready() -> void:
 	
 	#temp
 	
-	obj_velocity += Vector3.UP * 5
+	obj_velocity += Vector3.UP * hit_force_mult
 	#on_hit()
 
 func _input(event: InputEvent) -> void:
@@ -24,6 +26,11 @@ func _input(event: InputEvent) -> void:
 		%OnionTestPlayer.play("hit_test")
 
 func on_hit():
+	await ScreenEffects.freeze_frame(0.08)
 	%WoodenBox.linear_velocity = obj_velocity
 	%WoodenBox.apply_central_impulse(obj_velocity * hit_force_mult)
 	#Juice.squash_stretch(%Button)
+
+
+func _physics_process(delta: float) -> void:
+	%ScoreLabel.text = "Distance: %d m" % [lerpf(%WoodenBox.position.y - current_height, %WoodenBox.position.y - current_height, delta)]

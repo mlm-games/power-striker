@@ -97,7 +97,7 @@ static func flash_white(node: Node, duration: float = 0.1) -> Tween:
 ## [/codeblock]
 static func freeze_frame(duration: float = 0.05) -> void:
 	Engine.time_scale = 0.0
-	await A.create_timer(duration, true, false, true).timeout
+	await A.tree.create_timer(duration, true, false, true).timeout
 	Engine.time_scale = 1.0
 
 

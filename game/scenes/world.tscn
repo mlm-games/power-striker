@@ -238,6 +238,21 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(233, 0)
 
+[node name="TutorialLabel" type="RichTextLabel" parent="UI"]
+offset_left = 40.0
+offset_top = 371.0
+offset_right = 448.0
+offset_bottom = 498.0
+text = "Click to start!"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="UI"]
+unique_name_in_owner = true
+offset_left = 465.0
+offset_top = 67.0
+offset_right = 674.0
+offset_bottom = 132.0
+text = "Distance: 0 m"
+
 [node name="OnionTestPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
