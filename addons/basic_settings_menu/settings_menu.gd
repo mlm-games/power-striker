@@ -49,7 +49,7 @@ func _ready() -> void:
 	page_animator.animate_in()
 	
 	# To prevent the initial focus button sound
-	A.tree.root.create_timer(0.1, false).timeout.connect(func(): can_play_focus_sfx = true)
+	A.tree.create_timer(0.1, false).timeout.connect(func(): can_play_focus_sfx = true)
 
 
 	
