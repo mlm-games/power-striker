@@ -16,9 +16,12 @@ func _ready() -> void:
 	
 	#temp
 	
-	obj_velocity += Vector3.UP * 500
-	on_hit()
+	obj_velocity += Vector3.UP * 5
+	#on_hit()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("launch") and event.is_pressed():
+		%OnionTestPlayer.play("hit_test")
 
 func on_hit():
 	%WoodenBox.linear_velocity = obj_velocity
