@@ -3,7 +3,7 @@ class_name CallableStateMachine
 var state_dictionary = {}
 var current_state: String
 
-signal changed_states(from, to)
+signal state_changed(from, to)
 
 func add_states(
 	normal_state_callable: Callable,
@@ -44,7 +44,7 @@ func _set_state(state_name: String):
 		if !leave_callable.is_null():
 			leave_callable.call()
 	
-	changed_states.emit(current_state, state_name)
+	state_changed.emit(current_state, state_name)
 	current_state = state_name
 	
 	var enter_callable = state_dictionary[current_state].enter as Callable

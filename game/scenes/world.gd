@@ -23,11 +23,19 @@ func _ready() -> void:
 	camera_handler.follow_target = launchable_object
 	fsm.set_initial_state(ready_to_launch)
 	
-	fsm.changed_states.connect(printt.bind(":(from -> to) States changed"))
+	fsm.state_changed.connect(printt.bind(":(from -> to) States changed"))
 
-# No process stuff needed here
+func _physics_process(_delta: float) -> void:
+	fsm.update()
+
 func ready_to_launch(): pass
-func object_in_flight(): pass
+func object_in_flight(): 
+	%WorldEnvironment.environment.fog_light_color.b += (launchable_object.linear_velocity.y * 0.000001)
+	%WorldEnvironment.environment.fog_light_color.v -= (launchable_object.linear_velocity.y * 0.00001)
+	if launchable_object.current_height < -10.0: 
+		fsm.change_state(round_over); 
+		launchable_object.reset_state()
+
 func round_over(): pass
 
 func enter_ready_to_launch():

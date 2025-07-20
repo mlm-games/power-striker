@@ -30,8 +30,8 @@ func apply_fov_kick(kick_amount: float, recovery_speed: float):
 	fov_kick_recovery_speed = recovery_speed
 
 func return_to_home():
-	is_following = false
+	#is_following = false
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(self, "global_position", home_position, 1.0)
-	tween.tween_property(self, "rotation_degrees", home_rotation, 1.0)
-	tween.tween_callback(func(): is_following = true)
+	#tween.tween_property(self, "global_position", home_position, 1.0)
+	#tween.tween_property(self, "rotation_degrees", home_rotation, 1.0)
+	#tween.tween_callback(func(): is_following = true)

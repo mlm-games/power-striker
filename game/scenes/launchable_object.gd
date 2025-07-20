@@ -18,17 +18,22 @@ signal stopped_moving
 var is_airborne := false
 var max_height_reached := 0.0
 var initial_position: Vector3
+var initial_local_position: Vector3 
+var current_height: float
 
 func _ready() -> void:
 	initial_position = global_position
+	initial_local_position = position
 	
 	sleeping_state_changed.connect(func():
 		if sleeping and is_airborne:
 			is_airborne = false
 			stopped_moving.emit()
 	)
+	
 
-func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+
+func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if not is_airborne:
 		return
 	
@@ -38,7 +43,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	#var drag_force = -state.linear_velocity * state.linear_velocity.length() * air_resistance_factor
 	#state.apply_central_force(drag_force)
 	#
-	var current_height = global_position.y - initial_position.y
+	current_height = global_position.y - initial_position.y
 	if current_height > max_height_reached:
 		max_height_reached = current_height
 		height_updated.emit(max_height_reached)
@@ -59,6 +64,7 @@ func reset_state():
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	global_position = initial_position
+	position = initial_local_position
 	rotation = Vector3.ZERO
 	max_height_reached = 0.0
 	trail_particles.emitting = false
