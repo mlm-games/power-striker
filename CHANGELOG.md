@@ -1,3 +1,8 @@
+## v0.1.3
+
+- fix pause menu, ui scaling, add more sound effects by @mlm-games
+
+
 ## v0.1.2
 
 - show text properly by @mlm-games
