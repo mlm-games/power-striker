@@ -3,7 +3,7 @@ class_name World extends Node3D
 static var I : World
 var fsm := CallableStateMachine.new()
 
-@export var launch_force_multiplier := 100.0
+@export var launch_force_multiplier := 30.0
 
 @onready var launchable_object: LaunchableObject = %LaunchableObject
 @onready var launcher: Launcher = %Launcher
@@ -48,6 +48,7 @@ func enter_ready_to_launch():
 func leave_object_in_flight():
 	camera_handler.return_to_home()
 	ui_manager.show_round_over(launchable_object.max_height_reached)
+	ui_manager.update_points(ui_manager.points + launchable_object.max_height_reached)
 
 func enter_round_over():
 	# next round
