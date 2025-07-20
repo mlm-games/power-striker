@@ -41,7 +41,7 @@ func hide_tutorial():
 	#tutorial_label.visible = false
 	
 func show_round_over(final_score: float):
-	%ScoreText.text = "Max Height: %d m" % int(final_score)
+	%ScoreText.text = "[color=alice_blue]Max Height: %d m" % int(final_score)
 	round_end_panel.visible = true
 	round_end_panel.get_node("PopupAnimator").animate_in()
 
