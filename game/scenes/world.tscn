@@ -239,7 +239,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10020614, -2.8187604, -1.84
 shape = SubResource("BoxShape3D_7m8jt")
 
 [node name="Button" type="MeshInstance3D" parent="Visual3D/Button"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1903398, -3.0641074, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37112212, -3.0641074, -2)
 mesh = SubResource("ArrayMesh_y08k3")
 skeleton = NodePath("../../..")
 
@@ -255,7 +255,7 @@ shape = SubResource("BoxShape3D_wkjk4")
 disabled = true
 
 [node name="Hammer" type="MeshInstance3D" parent="Visual3D/Launcher"]
-transform = Transform3D(-8.223969e-07, 7.6838527, -0.8314768, 1.2554949e-07, -0.8314768, -7.6838527, -7.7287087, -8.311308e-07, -3.6345003e-08, 1.5279758, -1.4916823, 1.6001117)
+transform = Transform3D(-8.223969e-07, 7.6838527, -0.8314768, 1.2554949e-07, -0.8314768, -7.6838527, -7.7287087, -8.311308e-07, -3.6345003e-08, 1.0623167, -1.4916823, 1.6001117)
 mesh = ExtResource("3_uu6rj")
 skeleton = NodePath("../../..")
 
@@ -282,7 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6915045, -3.1352534, -7.58
 shape = SubResource("WorldBoundaryShape3D_cvjtv")
 
 [node name="floor_wood_4x42" parent="Visual3D/FloorWall" instance=ExtResource("11_jku6p")]
-transform = Transform3D(-5.24, 0, 0, 0, -5.24, 0, 0, 0, -5.24, -3.3522224, -2.0182743, -3.7011943)
+transform = Transform3D(-5.24, 0, 0, 0, -5.24, 0, 0, 0, -5.24, -3.7332387, -2.0182743, -3.7011943)
 
 [node name="BackWall" type="StaticBody3D" parent="Visual3D"]
 
@@ -701,5 +701,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5931625, 1.3110192, -0.9429
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9326258, 0.03354144, 3.6303458)
 light_color = Color(1, 1, 0.45882353, 1)
-light_energy = 4.28
+light_energy = 16.0
 spot_range = 29.663013
