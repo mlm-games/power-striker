@@ -1,3 +1,3 @@
-# Initial template for my godot games
+# Power smash
 
-A Tip: Try already successful stuff until you are satisfied (in the profession maintainability aspect) and can do something new
+Code from my game power-smash (half of the assets werent used, will proably remove them, all art is by kenney)
