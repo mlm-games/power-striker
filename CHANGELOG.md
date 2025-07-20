@@ -1,0 +1,22 @@
+# Changelog
+
+## v0.1.1
+
+- change the pitch scale too by @mlm-games
+- uncomment the camera part by @mlm-games
+- add action by @mlm-games
+- placeholder release for testing by @mlm-games
+- use the lighter env, better cam, snd some debugging by @mlm-games
+- add the font imports and theme by @mlm-games
+- kinda woorks when it lands on the floor (ignoring the panel) by @mlm-games
+- add more assets from asset lib, some more progress by @mlm-games
+- add ui pack and improve rotation part, may need some decoupling by @mlm-games
+- Whoof math was hard. The power bar works as intended by @mlm-games
+- counting part by @mlm-games
+- basic launching loop by @mlm-games
+- setup basic params to test by @mlm-games
+- add collision to ground and the spring by @mlm-games
+- add all asset packs and a gradient for power bar (think that's not an asset?) by @mlm-games
+- initial name change and other stuff by @mlm-games
+- Initial commit by @ragebreaker
+
