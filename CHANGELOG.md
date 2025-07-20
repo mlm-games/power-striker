@@ -1,3 +1,8 @@
+## v0.2.1
+
+- add credits to game by @mlm-games
+
+
 ## v0.2.0
 
 - add banner and icon by @mlm-games
