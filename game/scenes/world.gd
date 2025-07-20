@@ -32,6 +32,7 @@ func ready_to_launch(): pass
 func object_in_flight(): 
 	%WorldEnvironment.environment.fog_light_color.b += (launchable_object.linear_velocity.y * 0.000001)
 	%WorldEnvironment.environment.fog_light_color.v -= (launchable_object.linear_velocity.y * 0.00001)
+	%BGMPlayer.pitch_scale = clampf(%BGMPlayer.pitch_scale + launchable_object.linear_velocity.y * 0.0001, 0.78, 1)
 	if launchable_object.current_height < -10.0: 
 		fsm.change_state(round_over); 
 		launchable_object.reset_state()
