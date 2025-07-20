@@ -3,8 +3,8 @@
 extends Node
 
 # Sound Resources (cannot be configured in the inspector, as of 4.4, so set it later here)
-@export var default_click_sound: AudioStream
-@export var default_hover_sound: AudioStream
+@export var default_click_sound: AudioStream = preload("res://assets/kenney_ui-pack/Sounds/click-b.ogg")
+@export var default_hover_sound: AudioStream = preload("res://assets/kenney_ui-pack/Sounds/switch-a.ogg")
 
 # Internal Player Pool
 const POOL_SIZE = 5 # UI sounds are less frequent, so a smaller pool is fine

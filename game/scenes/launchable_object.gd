@@ -67,6 +67,7 @@ func reset_state():
 	position = initial_local_position
 	rotation = Vector3.ZERO
 	max_height_reached = 0.0
+	current_height = 10.0
 	trail_particles.emitting = false
 	is_airborne = false
 	sleeping = false

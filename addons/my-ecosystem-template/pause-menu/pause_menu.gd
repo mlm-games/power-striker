@@ -35,6 +35,7 @@ func unpause() -> void:
 
 func _on_unpause_animation_finished() -> void:
 	A.tree.paused = false
+	hide()
 	
 func _on_resume_button_pressed() -> void:
 	unpause()
@@ -51,3 +52,4 @@ func _on_settings_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	hide()
 	A.tree.paused = false
+	STransitions.change_scene_with_transition(ProjectSettings.get_setting("application/run/main_scene"))

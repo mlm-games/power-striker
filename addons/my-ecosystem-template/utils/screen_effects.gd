@@ -37,7 +37,7 @@ static func shake_camera(camera: Camera2D, strength: float = 10.0, duration: flo
 
 
 static func shake_camera_3d(camera: Camera3D, strength: float = 10.0, duration: float = 0.2) -> void:
-	_screen_shake_tween = camera.create_tween()
+	_screen_shake_tween = camera.create_tween().set_ignore_time_scale()
 	var shake_count = int(duration * 60) # 60 shakes per second
 	
 	for i in shake_count:

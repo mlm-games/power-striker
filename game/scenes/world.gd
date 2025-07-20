@@ -74,7 +74,7 @@ func perform_launch(power_ratio: float):
 	
 	launchable_object.launch(Vector3.UP * final_force)
 	
-	ScreenEffects.freeze_frame(0.08)
+	#ScreenEffects.freeze_frame(0.08)
 	camera_handler.apply_shake(1.5, 0.4)
 	camera_handler.apply_fov_kick(15.0, 5.0)
 
