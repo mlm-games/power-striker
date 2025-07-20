@@ -1,3 +1,10 @@
+## v0.2.2
+
+- add kenney splash screen, and mouse cursor by @mlm-games
+- add icon by @mlm-games
+- fix settings audio bar by @mlm-games
+
+
 ## v0.2.1
 
 - add credits to game by @mlm-games
