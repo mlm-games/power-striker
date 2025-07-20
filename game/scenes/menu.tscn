@@ -62,11 +62,10 @@ text = "MENU_LABEL_PLAY"
 script = ExtResource("1_71yso")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-text = "MENU_LABEL_SETTINGS"
+text = "MENU_LABEL_CREDITS"
 script = ExtResource("1_71yso")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
