@@ -1,4 +1,4 @@
-extends Camera3D
+class_name CameraHandler extends Camera3D
 
 @export var follow_speed := 5.0
 @export var follow_offset := Vector3(0, 4, 10) # How far to stay from the target
@@ -16,7 +16,7 @@ func _ready() -> void:
 	base_fov = fov
 
 func _process(delta: float) -> void:
-	if is_instance_valid(follow_target) and is_following:
+	if is_instance_valid(follow_target) and is_following and World.I.fsm.current_state == &"object_in_flight":
 		var target_pos = follow_target.global_position + follow_offset
 		global_position = global_position.lerp(target_pos, delta * follow_speed)
 	

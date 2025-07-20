@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://m2q08j8egr51" path="res://assets/kenney_ui-pack/Vector/Extra/input_square.svg" id="11_scav7"]
 [ext_resource type="Script" uid="uid://bfnv0fy3hlqcp" path="res://game/scenes/main_camera.gd" id="15_7m8jt"]
 [ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="16_hk75s"]
-[ext_resource type="Environment" uid="uid://brmx0frt2rbxf" path="res://assets/env.tres" id="18_cvjtv"]
 [ext_resource type="Script" uid="uid://cnfh1rl7a17mv" path="res://addons/my-ecosystem-template/transitions/popup_animator.gd" id="19_6s0f1"]
+[ext_resource type="Environment" uid="uid://c3xuqvl2mhlre" path="res://assets/lighter_env.tres" id="21_scav7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nepmf"]
 size = Vector3(1, 0.99072266, 1)
@@ -376,13 +376,30 @@ patch_margin_bottom = 20
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/UI"]
-layout_mode = 0
-offset_left = -333.0
-offset_top = -105.0
-offset_bottom = 79.0
+[node name="PanelContainer" type="PanelContainer" parent="UIManager/UI"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -358.0
+offset_top = -137.5
+offset_bottom = 137.5
+grow_horizontal = 0
+grow_vertical = 2
 
-[node name="Button" type="Button" parent="UIManager/UI/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/UI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Button" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Strength
 Hit the button harder!"
@@ -390,7 +407,7 @@ icon = ExtResource("8_qur0g")
 script = ExtResource("16_hk75s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="Button2" type="Button" parent="UIManager/UI/VBoxContainer"]
+[node name="Button2" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Dampness
 The springs will work better"
@@ -398,7 +415,7 @@ icon = ExtResource("9_eqg12")
 script = ExtResource("16_hk75s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="Button3" type="Button" parent="UIManager/UI/VBoxContainer"]
+[node name="Button3" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Aero dynamics
 box flies 10% faster"
@@ -453,4 +470,18 @@ current = true
 script = ExtResource("15_7m8jt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("18_cvjtv")
+environment = ExtResource("21_scav7")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.160016, 1.2410443, -0.7510867)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5931625, 1.3110192, -0.94299173)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9326258, 0.03354144, 3.6303458)
+light_color = Color(1, 1, 0.45882353, 1)
+light_energy = 4.28
+spot_range = 29.663013

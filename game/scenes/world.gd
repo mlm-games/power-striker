@@ -8,7 +8,7 @@ var fsm := CallableStateMachine.new()
 @onready var launchable_object: LaunchableObject = %LaunchableObject
 @onready var launcher: Launcher = %Launcher
 @onready var ui_manager: UIManager = %UIManager
-@onready var camera_handler: Camera3D = %CameraHandler
+@onready var camera_handler: CameraHandler = %CameraHandler
 
 func _ready() -> void:
 	I = self
@@ -22,32 +22,30 @@ func _ready() -> void:
 	
 	camera_handler.follow_target = launchable_object
 	fsm.set_initial_state(ready_to_launch)
+	
+	fsm.changed_states.connect(printt.bind(":(from -> to) States changed"))
 
+# No process stuff needed here
+func ready_to_launch(): pass
+func object_in_flight(): pass
+func round_over(): pass
 
 func enter_ready_to_launch():
-	print("Entering state: Ready to Launch")
 	launchable_object.reset_state()
 	ui_manager.reset_ui()
 	camera_handler.return_to_home()
 
-func ready_to_launch():
-	pass
 
-func object_in_flight():
-	pass
-	
 func leave_object_in_flight():
 	camera_handler.return_to_home()
 	ui_manager.show_round_over(launchable_object.max_height_reached)
 
 func enter_round_over():
-	print("Entering state: Round Over")
 	# next round
 	var timer = get_tree().create_timer(3.0)
 	timer.timeout.connect(fsm.change_state.bind(ready_to_launch))
 
-func round_over():
-	pass
+
 
 func _input(event: InputEvent) -> void:
 	if fsm.current_state == &"ready_to_launch" and event.is_action_pressed("launch"):
