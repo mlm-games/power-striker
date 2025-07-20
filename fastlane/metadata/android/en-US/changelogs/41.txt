@@ -1,0 +1,2 @@
+- add banner and icon by @mlm-games
+- add proper walls (and a lot of other stuff) by @mlm-games

@@ -1,3 +1,9 @@
+## v0.2.0
+
+- add banner and icon by @mlm-games
+- add proper walls (and a lot of other stuff) by @mlm-games
+
+
 ## v0.1.3
 
 - fix pause menu, ui scaling, add more sound effects by @mlm-games
