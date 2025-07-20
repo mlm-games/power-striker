@@ -477,6 +477,17 @@ offset_left = 62.0
 offset_top = 105.0
 offset_right = 553.0
 offset_bottom = 206.0
+bbcode_enabled = true
+
+[node name="ForceMultText" type="RichTextLabel" parent="UIManager/UI/RoundEndPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_top = 220.0
+offset_right = 555.0
+offset_bottom = 321.0
+bbcode_enabled = true
+text = "[wave]Force multiplier: 30"
 
 [node name="PopupAnimator" type="Node" parent="UIManager/UI/RoundEndPanel" node_paths=PackedStringArray("target_node")]
 script = ExtResource("19_6s0f1")
@@ -500,6 +511,7 @@ offset_left = 488.0
 offset_top = 46.0
 offset_right = 697.0
 offset_bottom = 111.0
+bbcode_enabled = true
 text = "Distance: 0 m"
 
 [node name="CameraHandler" type="Camera3D" parent="."]

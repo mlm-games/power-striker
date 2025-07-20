@@ -7,6 +7,7 @@ class_name UIManager extends CanvasLayer
 @onready var strength_button: AnimButton = %StrengthButton
 @onready var dampness_button: AnimButton = %DampnessButton
 @onready var aerodynamics_button: AnimButton = %AerodynamicsButton
+@onready var force_mult_text: RichTextLabel = %ForceMultText
 
 var points := 0
 
@@ -18,8 +19,11 @@ func _ready() -> void:
 	aerodynamics_button.pressed.connect(_on_upgrade_button_pressed)
 
 func _on_height_updated(height: float):
-	score_label.text = "Height: %d m" % int(height)
+	score_label.text = "[wave]Height: %d m" % int(height)
 	Juice.wobble(score_label)
+	
+func _on_force_mult_updated(force_mult: float):
+	force_mult_text.text = "[wave]Force multiplier: %d" % int(force_mult)
 
 func update_points(pts):
 	points = pts
@@ -44,4 +48,5 @@ func show_round_over(final_score: float):
 func _on_upgrade_button_pressed():
 	if points >= 10:
 		update_points(points - 10)
-	World.I.launch_force_multiplier += 1
+		World.I.launch_force_multiplier += 1
+		_on_force_mult_updated(World.I.launch_force_multiplier)
