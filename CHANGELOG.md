@@ -1,3 +1,11 @@
+## v0.1.2
+
+- show text properly by @mlm-games
+- show force multiplier in round end label by @mlm-games
+- add points scaling and buttons improve strength by 10 by @mlm-games
+- fix score label by @mlm-games
+
+
 # Changelog
 
 ## v0.1.1
