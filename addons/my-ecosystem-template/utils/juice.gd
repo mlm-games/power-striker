@@ -35,7 +35,7 @@ static func bounce_scale(node: Node2D, scale_amount: float = 1.2, duration: floa
 ## [param squash_amount]: A [Vector2] that defines the scale multiplier on the x and y axes.
 ##[br]
 ## [param duration]: The total time in seconds for the animation.
-static func squash_stretch(node: Node2D, squash_amount: Vector2 = Vector2(1.3, 0.7), duration: float = 0.2) -> Tween:
+static func squash_stretch(node: CanvasItem, squash_amount: Vector2 = Vector2(1.3, 0.7), duration: float = 0.2) -> Tween:
 	var original_scale = node.scale
 	var tween = node.create_tween()
 	tween.tween_property(node, "scale", original_scale * squash_amount, duration * 0.5)

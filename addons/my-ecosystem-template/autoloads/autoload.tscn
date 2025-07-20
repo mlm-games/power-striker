@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://h30mob8qlss4"]
+[gd_scene load_steps=4 format=3 uid="uid://h30mob8qlss4"]
 
 [ext_resource type="Script" uid="uid://ixpppcuhpbdm" path="res://addons/my-ecosystem-template/autoloads/autoload.gd" id="1_f5mab"]
+[ext_resource type="AudioStream" uid="uid://cfo8fqh0uiybt" path="res://assets/sound/Pound it!.wav" id="2_iv146"]
+[ext_resource type="Script" uid="uid://dm6t0e3j2om3s" path="res://game/bgm_player.gd" id="3_p7u2h"]
 
 [node name="Autoload" type="Node"]
 script = ExtResource("1_f5mab")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_iv146")
+volume_db = -9.0
+pitch_scale = 0.78
+script = ExtResource("3_p7u2h")
+metadata/_custom_type_script = "uid://dm6t0e3j2om3s"

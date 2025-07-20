@@ -2,3 +2,4 @@
 extends Node #class_name A for Autoload
 
 static var tree : SceneTree = Engine.get_main_loop()
+@onready var bgm_player: BGMPlayer = %BGMPlayer

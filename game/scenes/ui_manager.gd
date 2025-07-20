@@ -12,18 +12,16 @@ class_name UIManager extends CanvasLayer
 var points := 0
 
 func _ready() -> void:
-	var launchable_object = LaunchableObject.I
-	launchable_object.height_updated.connect(_on_height_updated)
+	LaunchableObject.I.height_updated.connect(_on_height_updated)
 	strength_button.pressed.connect(_on_upgrade_button_pressed)
 	dampness_button.pressed.connect(_on_upgrade_button_pressed)
 	aerodynamics_button.pressed.connect(_on_upgrade_button_pressed)
 
 func _on_height_updated(height: float):
 	score_label.text = "[wave]Height: %d m" % int(height)
-	Juice.wobble(score_label)
 	
 func _on_force_mult_updated(force_mult: float):
-	force_mult_text.text = "[wave]Force multiplier: %d" % int(force_mult)
+	force_mult_text.text = "[outline_color=dark_green][outline_size=10][wave]Force multiplier: %d" % int(force_mult)
 
 func update_points(pts):
 	points = pts
@@ -31,7 +29,7 @@ func update_points(pts):
 
 func reset_ui():
 	tutorial_label.visible = true
-	round_end_panel.get_node("PopupAnimator").animate_out()
+	round_end_panel.get_node("PopupAnimator").animate_out(round_end_panel.hide)
 	score_label.text = "Height: 0 m"
 	power_bar.start_swinging()
 	
@@ -41,7 +39,7 @@ func hide_tutorial():
 	#tutorial_label.visible = false
 	
 func show_round_over(final_score: float):
-	%ScoreText.text = "[color=alice_blue]Max Height: %d m" % int(final_score)
+	%ScoreText.text = "[color=alice_blue][outline_color=dark_orange][outline_size=5]Max Height: %d m" % int(final_score)
 	round_end_panel.visible = true
 	round_end_panel.get_node("PopupAnimator").animate_in()
 

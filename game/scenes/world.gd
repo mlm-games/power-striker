@@ -32,7 +32,7 @@ func ready_to_launch(): pass
 func object_in_flight(): 
 	%WorldEnvironment.environment.fog_light_color.b += (launchable_object.linear_velocity.y * 0.000001)
 	%WorldEnvironment.environment.fog_light_color.v -= (launchable_object.linear_velocity.y * 0.00001)
-	%BGMPlayer.pitch_scale = clampf(%BGMPlayer.pitch_scale + launchable_object.linear_velocity.y * 0.0001, 0.78, 1)
+	A.bgm_player.pitch_scale = clampf(A.bgm_player.pitch_scale + launchable_object.linear_velocity.y * 0.0001, 0.78, 1)
 	if launchable_object.current_height < -10.0: 
 		fsm.change_state(round_over); 
 		launchable_object.reset_state()
@@ -57,7 +57,7 @@ func enter_round_over():
 
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if fsm.current_state == &"ready_to_launch" and event.is_action_pressed("launch"):
 		ui_manager.power_bar.stop_and_request_hit()
 

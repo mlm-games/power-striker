@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2xl5lomucrcp"]
+
+[ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="1_71yso"]
+[ext_resource type="Script" uid="uid://bi8hnj8cootyp" path="res://game/scenes/menu.gd" id="1_ugwst"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugwst")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer"]
+modulate = Color(0.52906674, 0.5290667, 0.5290667, 1)
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[font_size=50px][outline_size=10][wave]POWER STRIKERS"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Control3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.75
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MENU_LABEL_PLAY"
+script = ExtResource("1_71yso")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "MENU_LABEL_SETTINGS"
+script = ExtResource("1_71yso")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MENU_LABEL_QUIT"
+script = ExtResource("1_71yso")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
+
+[node name="Control4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

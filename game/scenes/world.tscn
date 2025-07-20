@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bqkcvdot8ygo3"]
+[gd_scene load_steps=49 format=4 uid="uid://bqkcvdot8ygo3"]
 
 [ext_resource type="Script" uid="uid://yoyw73b2ocos" path="res://game/scenes/world.gd" id="1_2gpe7"]
 [ext_resource type="ArrayMesh" uid="uid://cu8yghv08chlv" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/red/spring_pad_red.obj" id="1_6pf46"]
@@ -13,16 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://ctexfxxqdescl" path="res://assets/kenney_ui-pack/PNG/Red/Double/icon_square.png" id="7_y08k3"]
 [ext_resource type="Texture2D" uid="uid://dtj25w7627gms" path="res://assets/kenney_ui-pack/PNG/Green/Double/arrow_basic_n.png" id="8_qur0g"]
 [ext_resource type="Texture2D" uid="uid://uh4d2saei5lm" path="res://assets/kenney_ui-pack/PNG/Red/Double/arrow_basic_n.png" id="9_eqg12"]
+[ext_resource type="Texture2D" uid="uid://c2tlddau6k2ka" path="res://assets/kenney_abstract-platformer/PNG/Other/buttonFloor_pressed.png" id="10_6s0f1"]
 [ext_resource type="Script" uid="uid://mtku0ncgoecu" path="res://game/scenes/ui_manager.gd" id="10_7m8jt"]
 [ext_resource type="Texture2D" uid="uid://dsc07yp36y8ww" path="res://assets/kenney_ui-pack/PNG/Grey/Double/arrow_basic_n.png" id="10_621cg"]
 [ext_resource type="Script" uid="uid://yag0n43o56do" path="res://game/scenes/power_bar.gd" id="10_q3m2p"]
+[ext_resource type="PackedScene" uid="uid://cgcdavm4ltgyy" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/fbx/yellow/barrier_4x1x4_yellow.fbx" id="11_22n25"]
+[ext_resource type="PackedScene" uid="uid://dwi7jdoub6tte" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/gltf/neutral/floor_wood_4x4.gltf" id="11_jku6p"]
 [ext_resource type="Texture2D" uid="uid://m2q08j8egr51" path="res://assets/kenney_ui-pack/Vector/Extra/input_square.svg" id="11_scav7"]
+[ext_resource type="PackedScene" uid="uid://cb4msvfhlraw3" path="res://assets/KayKit_Platformer_Pack_1.0_FREE/Assets/fbx/red/signage_arrow_wall_red.fbx" id="12_jku6p"]
 [ext_resource type="Script" uid="uid://bfnv0fy3hlqcp" path="res://game/scenes/main_camera.gd" id="15_7m8jt"]
 [ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="16_hk75s"]
 [ext_resource type="Script" uid="uid://cnfh1rl7a17mv" path="res://addons/my-ecosystem-template/transitions/popup_animator.gd" id="19_6s0f1"]
 [ext_resource type="Environment" uid="uid://c3xuqvl2mhlre" path="res://assets/lighter_env.tres" id="21_scav7"]
-[ext_resource type="AudioStream" uid="uid://cfo8fqh0uiybt" path="res://assets/sound/Pound it!.wav" id="22_6s0f1"]
-[ext_resource type="Script" uid="uid://dm6t0e3j2om3s" path="res://game/bgm_player.gd" id="23_22n25"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nepmf"]
 size = Vector3(1, 0.99072266, 1)
@@ -151,6 +153,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6rj"]
+albedo_texture = ExtResource("10_6s0f1")
 emission_enabled = true
 emission = Color(0.25789198, 0.27394545, 0.42531568, 1)
 
@@ -278,15 +281,26 @@ material = SubResource("StandardMaterial3D_uu6rj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6915045, -3.1352534, -7.5871124)
 shape = SubResource("WorldBoundaryShape3D_cvjtv")
 
-[node name="BackWall" type="StaticBody3D" parent="Visual3D"]
+[node name="floor_wood_4x42" parent="Visual3D/FloorWall" instance=ExtResource("11_jku6p")]
+transform = Transform3D(-5.24, 0, 0, 0, -5.24, 0, 0, 0, -5.24, -3.3522224, -2.0182743, -3.7011943)
 
-[node name="BackWall" type="CSGBox3D" parent="Visual3D/BackWall"]
-transform = Transform3D(1, 0, 0, 0, -0.014101803, -0.9999006, 0, 0.9999006, -0.014101803, -3.9979076, 7.8914948, -10.867951)
-size = Vector3(18.838345, 1, 21.13031)
+[node name="BackWall" type="StaticBody3D" parent="Visual3D"]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Visual3D/BackWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6915045, 6.984026, -11.926697)
 shape = SubResource("WorldBoundaryShape3D_twmbl")
+
+[node name="barrier_4x1x4_yellow" parent="Visual3D/BackWall" instance=ExtResource("11_22n25")]
+transform = Transform3D(4.67, 0, 0, 0, 4.4725857, 1.3434569, 0, -1.3434569, 4.4725857, -4.186172, -4.553667, -12.403829)
+
+[node name="barrier_4x1x4_yellow2" parent="Visual3D/BackWall" instance=ExtResource("11_22n25")]
+transform = Transform3D(4.67, 0, 0, 0, 4.4725857, 1.3434569, 0, -1.3434569, 4.4725857, -4.186172, 12.890877, -17.721947)
+
+[node name="barrier_4x1x4_yellow3" parent="Visual3D/BackWall" instance=ExtResource("11_22n25")]
+transform = Transform3D(4.67, 0, 0, 0, 4.473031, -1.3419737, 0, 1.3419737, 4.473031, -4.186172, 29.360226, -23.256275)
+
+[node name="barrier_4x1x4_yellow4" parent="Visual3D/BackWall" instance=ExtResource("11_22n25")]
+transform = Transform3D(4.67, 0, 0, 0, 4.473031, -1.3419737, 0, 1.3419737, 4.473031, -4.186172, 47.231728, -16.960821)
 
 [node name="LeftWall" type="StaticBody3D" parent="Visual3D"]
 
@@ -295,20 +309,134 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.992052, 6.5395546, -6.645
 shape = SubResource("WorldBoundaryShape3D_og4pm")
 disabled = true
 
-[node name="Left" type="CSGBox3D" parent="Visual3D/LeftWall"]
-transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, -12.743392, 4.3921394, -4.2100563)
-size = Vector3(14.671356, 1, 12.613159)
+[node name="signage_arrow_wall_red" parent="Visual3D/LeftWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.625956, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/LeftWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/LeftWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/LeftWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/LeftWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 83.304, -3.8)
 
 [node name="RightWall" type="StaticBody3D" parent="Visual3D"]
-
-[node name="RightWall" type="CSGBox3D" parent="Visual3D/RightWall"]
-transform = Transform3D(-0.0063704257, 0.99997973, 0, -0.99997973, -0.0063704257, 0, 0, 0, 1, 5.1884623, 4.387636, -4.356015)
-size = Vector3(14.671356, 1, 12.613159)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/RightWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2352614, 6.44114, -7.2569246)
 shape = SubResource("WorldBoundaryShape3D_scav7")
 disabled = true
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/RightWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.56637, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/RightWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/RightWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/RightWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red6" parent="Visual3D/RightWall" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 83.304, -3.8)
+
+[node name="LeftWall2" type="StaticBody3D" parent="Visual3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/LeftWall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.992052, 6.5395546, -6.6453953)
+shape = SubResource("WorldBoundaryShape3D_og4pm")
+disabled = true
+
+[node name="signage_arrow_wall_red" parent="Visual3D/LeftWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.625956, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/LeftWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/LeftWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/LeftWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/LeftWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 83.304, -3.8)
+
+[node name="RightWall2" type="StaticBody3D" parent="Visual3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/RightWall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2352614, 6.44114, -7.2569246)
+shape = SubResource("WorldBoundaryShape3D_scav7")
+disabled = true
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/RightWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.56637, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/RightWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/RightWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/RightWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red6" parent="Visual3D/RightWall2" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 83.304, -3.8)
+
+[node name="LeftWall3" type="StaticBody3D" parent="Visual3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 800, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/LeftWall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.992052, 6.5395546, -6.6453953)
+shape = SubResource("WorldBoundaryShape3D_og4pm")
+disabled = true
+
+[node name="signage_arrow_wall_red" parent="Visual3D/LeftWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.625956, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/LeftWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/LeftWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/LeftWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/LeftWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, -14.626, 83.304, -3.8)
+
+[node name="RightWall3" type="StaticBody3D" parent="Visual3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 600, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual3D/RightWall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2352614, 6.44114, -7.2569246)
+shape = SubResource("WorldBoundaryShape3D_scav7")
+disabled = true
+
+[node name="signage_arrow_wall_red2" parent="Visual3D/RightWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.56637, 3.303802, -3.7997513)
+
+[node name="signage_arrow_wall_red3" parent="Visual3D/RightWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 23.304, -3.8)
+
+[node name="signage_arrow_wall_red4" parent="Visual3D/RightWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 43.304, -3.8)
+
+[node name="signage_arrow_wall_red5" parent="Visual3D/RightWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 63.304, -3.8)
+
+[node name="signage_arrow_wall_red6" parent="Visual3D/RightWall3" instance=ExtResource("12_jku6p")]
+transform = Transform3D(3.891875e-14, 8.903572e-07, 20.369, 20.369, -8.903572e-07, 0, 8.903572e-07, 20.369, -8.903572e-07, 6.566, 83.304, -3.8)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.111847, 0)
@@ -324,65 +452,33 @@ script = ExtResource("10_7m8jt")
 
 [node name="UI" type="Control" parent="UIManager"]
 layout_mode = 3
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="UIManager/UI"]
-layout_mode = 0
-offset_left = -273.0
-offset_top = 257.0
-offset_right = -25.0
-offset_bottom = 311.0
-texture = ExtResource("11_scav7")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_use_anchors_ = true
 
-[node name="PowerBar" type="TextureProgressBar" parent="UIManager/UI"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -267.0
-offset_top = 264.0
-offset_right = -33.0
-offset_bottom = 304.0
-fill_mode = 6
-nine_patch_stretch = true
-texture_over = SubResource("GradientTexture2D_nepmf")
-script = ExtResource("10_q3m2p")
-
-[node name="PowerBarLeft" type="Marker2D" parent="UIManager/UI/PowerBar"]
-unique_name_in_owner = true
-
-[node name="PowerBarRight" type="Marker2D" parent="UIManager/UI/PowerBar"]
-unique_name_in_owner = true
-position = Vector2(233, 0)
-
-[node name="Path2D" type="Path2D" parent="UIManager/UI/PowerBar"]
-curve = SubResource("Curve2D_wkjk4")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="UIManager/UI/PowerBar/Path2D"]
-unique_name_in_owner = true
-
-[node name="Arrow" type="Sprite2D" parent="UIManager/UI/PowerBar"]
-unique_name_in_owner = true
-modulate = Color(2.9083786, 2.9083786, 2.9083786, 1)
-position = Vector2(1, 0)
-texture = ExtResource("6_uu6rj")
-offset = Vector2(0, -29)
-flip_v = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UIManager/UI"]
-layout_mode = 0
-offset_left = -1144.0
-offset_top = -304.0
-offset_right = -9.0
-offset_bottom = -212.0
+[node name="NinePatchRect" type="NinePatchRect" parent="UIManager/UI/MarginContainer"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 texture = ExtResource("7_y08k3")
 patch_margin_left = 20
 patch_margin_top = 20
@@ -391,43 +487,59 @@ patch_margin_bottom = 20
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="UIManager/UI"]
+[node name="ScoreLabel" type="RichTextLabel" parent="UIManager/UI/MarginContainer/NinePatchRect"]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -358.0
-offset_top = -137.5
-offset_bottom = 137.5
-grow_horizontal = 0
+offset_left = -104.5
+offset_top = -32.5
+offset_right = 104.5
+offset_bottom = 32.5
+grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(104, 32)
+bbcode_enabled = true
+text = "Distance: 0 m"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="UIManager/UI/PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="UIManager/UI/MarginContainer"]
+self_modulate = Color(0.49712867, 0.49712867, 0.49712867, 1)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="UIManager/UI/MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/UI/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="PointsTextLabel" type="RichTextLabel" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="PointsTextLabel" type="RichTextLabel" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[wave]Points:"
 fit_content = true
 
-[node name="PointsLabel" type="RichTextLabel" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="PointsLabel" type="RichTextLabel" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -436,7 +548,7 @@ bbcode_enabled = true
 text = "0"
 fit_content = true
 
-[node name="StrengthButton" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="StrengthButton" type="Button" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Strength
@@ -445,7 +557,7 @@ icon = ExtResource("8_qur0g")
 script = ExtResource("16_hk75s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="DampnessButton" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DampnessButton" type="Button" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Dampness
@@ -454,7 +566,7 @@ icon = ExtResource("9_eqg12")
 script = ExtResource("16_hk75s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="AerodynamicsButton" type="Button" parent="UIManager/UI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="AerodynamicsButton" type="Button" parent="UIManager/UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Aero dynamics
@@ -463,37 +575,98 @@ icon = ExtResource("10_621cg")
 script = ExtResource("16_hk75s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="RoundEndPanel" type="Panel" parent="UIManager/UI"]
+[node name="RoundEndPanel" type="Panel" parent="UIManager/UI/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -1105.0
-offset_top = -183.0
-offset_right = -387.0
-offset_bottom = 292.0
+self_modulate = Color(0.30769438, 0.30769438, 0.30769438, 1)
+layout_mode = 2
+metadata/_edit_group_ = true
 
-[node name="ScoreText" type="RichTextLabel" parent="UIManager/UI/RoundEndPanel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 62.0
-offset_top = 105.0
-offset_right = 553.0
-offset_bottom = 206.0
-bbcode_enabled = true
-
-[node name="ForceMultText" type="RichTextLabel" parent="UIManager/UI/RoundEndPanel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 64.0
-offset_top = 220.0
-offset_right = 555.0
-offset_bottom = 321.0
-bbcode_enabled = true
-text = "[wave]Force multiplier: 30"
-
-[node name="PopupAnimator" type="Node" parent="UIManager/UI/RoundEndPanel" node_paths=PackedStringArray("target_node")]
+[node name="PopupAnimator" type="Node" parent="UIManager/UI/MarginContainer/RoundEndPanel" node_paths=PackedStringArray("target_node")]
 script = ExtResource("19_6s0f1")
 target_node = NodePath("..")
 metadata/_custom_type_script = "uid://cnfh1rl7a17mv"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/UI/MarginContainer/RoundEndPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -186.0
+offset_right = 217.5
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ScoreText" type="RichTextLabel" parent="UIManager/UI/MarginContainer/RoundEndPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[outline_size=20]tempi"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ForceMultText" type="RichTextLabel" parent="UIManager/UI/MarginContainer/RoundEndPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[outline_color=dark_green][outline_size=5][wave]Force multiplier: 30"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UIManager/UI"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 565.0
+offset_right = 1108.0
+offset_bottom = 620.0
+texture = ExtResource("11_scav7")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+metadata/_edit_group_ = true
+
+[node name="PowerBar" type="TextureProgressBar" parent="UIManager/UI/NinePatchRect2"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 240.0
+offset_bottom = 47.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_over = SubResource("GradientTexture2D_nepmf")
+script = ExtResource("10_q3m2p")
+metadata/_edit_group_ = true
+
+[node name="PowerBarLeft" type="Marker2D" parent="UIManager/UI/NinePatchRect2/PowerBar"]
+unique_name_in_owner = true
+
+[node name="PowerBarRight" type="Marker2D" parent="UIManager/UI/NinePatchRect2/PowerBar"]
+unique_name_in_owner = true
+position = Vector2(233, 0)
+
+[node name="Path2D" type="Path2D" parent="UIManager/UI/NinePatchRect2/PowerBar"]
+curve = SubResource("Curve2D_wkjk4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="UIManager/UI/NinePatchRect2/PowerBar/Path2D"]
+unique_name_in_owner = true
+
+[node name="Arrow" type="Sprite2D" parent="UIManager/UI/NinePatchRect2/PowerBar"]
+unique_name_in_owner = true
+modulate = Color(2.9083786, 2.9083786, 2.9083786, 1)
+position = Vector2(1, 0)
+texture = ExtResource("6_uu6rj")
+offset = Vector2(0, -29)
+flip_v = true
 
 [node name="TutorialLabel" type="RichTextLabel" parent="UIManager"]
 unique_name_in_owner = true
@@ -501,19 +674,11 @@ offset_left = 40.0
 offset_top = 371.0
 offset_right = 448.0
 offset_bottom = 498.0
+mouse_filter = 2
 bbcode_enabled = true
 text = "[wave]Click to start!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ScoreLabel" type="RichTextLabel" parent="UIManager"]
-unique_name_in_owner = true
-offset_left = 488.0
-offset_top = 46.0
-offset_right = 697.0
-offset_bottom = 111.0
-bbcode_enabled = true
-text = "Distance: 0 m"
 
 [node name="CameraHandler" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -538,11 +703,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9326258, 0.03354144, 3.630
 light_color = Color(1, 1, 0.45882353, 1)
 light_energy = 4.28
 spot_range = 29.663013
-
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("22_6s0f1")
-volume_db = -9.0
-pitch_scale = 0.78
-script = ExtResource("23_22n25")
-metadata/_custom_type_script = "uid://dm6t0e3j2om3s"

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="power-delivery"
 config/description="Deliver goods using tried and tested methods!"
-run/main_scene="uid://bqkcvdot8ygo3"
+run/main_scene="uid://d2xl5lomucrcp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
 config/icon="res://icon.svg"
@@ -86,4 +86,4 @@ locale/translations=PackedStringArray("res://locale/translations.ar.translation"
 
 textures/vram_compression/import_etc2_astc=true
 global_illumination/gi/use_half_resolution=true
-environment/defaults/default_clear_color=Color(0.0823529, 0.0941176, 0.160784, 1)
+environment/defaults/default_clear_color=Color(0.5701504, 0.8028458, 0.33020073, 1)

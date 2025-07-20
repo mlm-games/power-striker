@@ -9,5 +9,5 @@ func play_impact_audio():
 	AudioM.play_sound_varied(preload("res://assets/sound/sfx/short wind sound.wav"))
 	UiAudioM.play_click_sound()
 
-func stop_wind_sfx():
-	A
+#func stop_wind_sfx():
+	#A

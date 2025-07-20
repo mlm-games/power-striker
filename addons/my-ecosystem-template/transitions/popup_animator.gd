@@ -51,6 +51,8 @@ func animate_out(on_finish: Callable = Callable()) -> void:
 		
 
 	_active_tween.parallel().tween_property(target_node, "modulate", Color.TRANSPARENT, transition_duration)
+	
+	
 
 
 	if on_finish.is_valid():
