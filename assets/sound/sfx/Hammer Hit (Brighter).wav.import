@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://g3w4yargfm4e"
+path="res://.godot/imported/Hammer Hit (Brighter).wav-cbb61d000ae960c4e9696855fd12065c.sample"
+
+[deps]
+
+source_file="res://assets/sound/sfx/Hammer Hit (Brighter).wav"
+dest_files=["res://.godot/imported/Hammer Hit (Brighter).wav-cbb61d000ae960c4e9696855fd12065c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
