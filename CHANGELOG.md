@@ -1,3 +1,8 @@
+## v0.2.3
+
+- fixed it, do not know why it works though by @mlm-games
+
+
 ## v0.2.2
 
 - add kenney splash screen, and mouse cursor by @mlm-games
