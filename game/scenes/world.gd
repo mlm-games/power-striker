@@ -35,7 +35,7 @@ func object_in_flight():
 	A.bgm_player.pitch_scale = clampf(A.bgm_player.pitch_scale + launchable_object.linear_velocity.y * 0.0001, 0.78, 1)
 	if launchable_object.current_height < -10.0: 
 		fsm.change_state(round_over); 
-		launchable_object.reset_state()
+		launchable_object.reset_state.call_deferred()
 
 func round_over(): pass
 
