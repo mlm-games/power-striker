@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Power Smash!
+Name=Power Striker!
 GenericName=PowerSmash
 Comment=Watch a box fly!
-Exec=power-smash %F
-Icon=io.github.mlm_games.power-smash
+Exec=power-striker %F
+Icon=io.github.mlm_games.power-striker
 Terminal=false
 Type=Application
 Categories=Game;Amusement

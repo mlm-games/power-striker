@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Smash-with-power
-GenericName=Smash-with-power
+Name=power-striker
+GenericName=power-striker
 Comment=Watch the box fly!
-Exec=smash-with-power %F
+Exec=power-striker %F
 Icon=${SNAP}/meta/gui/icon.png
 Terminal=false
 Type=Application

@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://b3a12xmhryaim"
-path="res://.godot/imported/icon_outline_cross.svg-48647b03daf55c90641beabc435c2139.svgtex"
+path="res://.godot/imported/icon_outline_cross.svg-48647b03daf55c90641beabc435c2139.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/icon_outline_cross.svg"
-dest_files=["res://.godot/imported/icon_outline_cross.svg-48647b03daf55c90641beabc435c2139.svgtex"]
+dest_files=["res://.godot/imported/icon_outline_cross.svg-48647b03daf55c90641beabc435c2139.dpitex"]
 
 [params]
 

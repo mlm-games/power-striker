@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://bb68nf58d1gx2"
-path="res://.godot/imported/button_round_gradient.svg-ed78412164e21e8cbf322024f78af890.svgtex"
+path="res://.godot/imported/button_round_gradient.svg-ed78412164e21e8cbf322024f78af890.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/button_round_gradient.svg"
-dest_files=["res://.godot/imported/button_round_gradient.svg-ed78412164e21e8cbf322024f78af890.svgtex"]
+dest_files=["res://.godot/imported/button_round_gradient.svg-ed78412164e21e8cbf322024f78af890.dpitex"]
 
 [params]
 

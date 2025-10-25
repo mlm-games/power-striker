@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://l6i6ym0jk1pw"
-path="res://.godot/imported/arrow_basic_w.svg-f26b43e662a8db838c81201d394bbead.svgtex"
+path="res://.godot/imported/arrow_basic_w.svg-f26b43e662a8db838c81201d394bbead.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/arrow_basic_w.svg"
-dest_files=["res://.godot/imported/arrow_basic_w.svg-f26b43e662a8db838c81201d394bbead.svgtex"]
+dest_files=["res://.godot/imported/arrow_basic_w.svg-f26b43e662a8db838c81201d394bbead.dpitex"]
 
 [params]
 

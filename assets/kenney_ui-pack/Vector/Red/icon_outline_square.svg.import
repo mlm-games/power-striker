@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dnkvpaihrwjcf"
-path="res://.godot/imported/icon_outline_square.svg-c32593696fad1310a23288809d9d08c2.svgtex"
+path="res://.godot/imported/icon_outline_square.svg-c32593696fad1310a23288809d9d08c2.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/icon_outline_square.svg"
-dest_files=["res://.godot/imported/icon_outline_square.svg-c32593696fad1310a23288809d9d08c2.svgtex"]
+dest_files=["res://.godot/imported/icon_outline_square.svg-c32593696fad1310a23288809d9d08c2.dpitex"]
 
 [params]
 

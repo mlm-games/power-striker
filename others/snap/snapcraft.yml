@@ -1,4 +1,4 @@
-name: power-smash
+name: power-striker
 base: core22
 version: '0.1.0'
 summary: Hit the block at the right time
@@ -13,13 +13,13 @@ architectures:
   - build-on: arm64
 
 apps:
-  power-smash:
-    command: power-smash
+  power-striker:
+    command: power-striker
     extensions: [gnome]
     plugs: [home, network, removable-media, unity7]
       
 parts:
-  power-smash:
+  power-striker:
     plugin: dump
     source: ./builds/
     source-type: local
@@ -32,8 +32,8 @@ parts:
       - libpulse0
     override-build: |
       snapcraftctl build
-      chmod +x $SNAPCRAFT_PART_INSTALL/power-smash
+      chmod +x $SNAPCRAFT_PART_INSTALL/power-striker
 
 layout:
-  /usr/share/power-smash:
-    bind: $SNAP/usr/share/power-smash
+  /usr/share/power-striker:
+    bind: $SNAP/usr/share/power-striker

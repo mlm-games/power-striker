@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dfps8o5ucyrpv"
-path="res://.godot/imported/check_round_round_circle.svg-ec95f11c5e105ae986f89588460b05ba.svgtex"
+path="res://.godot/imported/check_round_round_circle.svg-ec95f11c5e105ae986f89588460b05ba.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/check_round_round_circle.svg"
-dest_files=["res://.godot/imported/check_round_round_circle.svg-ec95f11c5e105ae986f89588460b05ba.svgtex"]
+dest_files=["res://.godot/imported/check_round_round_circle.svg-ec95f11c5e105ae986f89588460b05ba.dpitex"]
 
 [params]
 

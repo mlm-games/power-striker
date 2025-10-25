@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://cljmjbaxvno80"
-path="res://.godot/imported/check_square_grey_checkmark.svg-98301e84897914e1841ed3e5f016453f.svgtex"
+path="res://.godot/imported/check_square_grey_checkmark.svg-98301e84897914e1841ed3e5f016453f.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/check_square_grey_checkmark.svg"
-dest_files=["res://.godot/imported/check_square_grey_checkmark.svg-98301e84897914e1841ed3e5f016453f.svgtex"]
+dest_files=["res://.godot/imported/check_square_grey_checkmark.svg-98301e84897914e1841ed3e5f016453f.dpitex"]
 
 [params]
 

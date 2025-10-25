@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://bw8ndpby3m7ev"
-path="res://.godot/imported/check_square_grey_cross.svg-153ad2dca631b78301a3f39b86e9abfd.svgtex"
+path="res://.godot/imported/check_square_grey_cross.svg-153ad2dca631b78301a3f39b86e9abfd.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/check_square_grey_cross.svg"
-dest_files=["res://.godot/imported/check_square_grey_cross.svg-153ad2dca631b78301a3f39b86e9abfd.svgtex"]
+dest_files=["res://.godot/imported/check_square_grey_cross.svg-153ad2dca631b78301a3f39b86e9abfd.dpitex"]
 
 [params]
 

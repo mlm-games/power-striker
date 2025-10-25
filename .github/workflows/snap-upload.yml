@@ -33,13 +33,13 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p others/snap/builds others/snap/gui
-          cp others/flathub/io.github.mlm_games.power-smash.desktop others/snap/gui/power-smash.desktop
+          cp others/flathub/io.github.mlm_games.power-striker.desktop others/snap/gui/power-striker.desktop
           cp fastlane/metadata/android/en-US/images/icon.png others/snap/gui/icon.png
-          sed -i -e 's|^Exec=.*|Exec=power-smash|' \
+          sed -i -e 's|^Exec=.*|Exec=power-striker|' \
                  -e 's|^Icon=.*|Icon=${SNAP}/meta/gui/icon.png|' \
-                 others/snap/gui/power-smash.desktop
-          curl -fL "https://github.com/${{ github.repository }}/releases/download/${{ inputs.version_name }}/power-smash.x86_64" -o others/snap/builds/power-smash
-          chmod +x others/snap/builds/power-smash
+                 others/snap/gui/power-striker.desktop
+          curl -fL "https://github.com/${{ github.repository }}/releases/download/${{ inputs.version_name }}/power-striker.x86_64" -o others/snap/builds/power-striker
+          chmod +x others/snap/builds/power-striker
 
       - name: Update version in snapcraft.yml
         run: |

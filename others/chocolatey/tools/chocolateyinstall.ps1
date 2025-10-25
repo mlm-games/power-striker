@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'smash-with-power'
+$packageName = 'power-striker'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/mlm-games/smash-with-power/releases/download/0.1.0/smash-with-power.exe'
+$url = 'https://github.com/mlm-games/power-striker/releases/download/0.1.0/power-striker.exe'
 
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'EXE'
   url           = $url
-  softwareName  = 'Smash-with-power*'
+  softwareName  = 'power-striker*'
   checksum      = '0000000000000000000000000000000000000000000000000000000000000000'
   checksumType  = 'sha256'
   silentArgs    = "/S"
@@ -30,4 +30,4 @@ $startMenu = Join-Path $env:ProgramData "Microsoft\Windows\Start Menu\Programs"
 $shortcutFile = Join-Path $startMenu "$packageName.lnk"
 Install-ChocolateyShortcut -ShortcutFilePath $shortcutFile -TargetPath $fileLocation
 
-Write-Host "Smash-with-power has been installed to $installDir"
+Write-Host "power-striker has been installed to $installDir"

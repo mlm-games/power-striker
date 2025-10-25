@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://xgprsws7ch3s"
-path="res://.godot/imported/check_round_grey.svg-18a3db5615281167b4617dfd470cfd48.svgtex"
+path="res://.godot/imported/check_round_grey.svg-18a3db5615281167b4617dfd470cfd48.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/check_round_grey.svg"
-dest_files=["res://.godot/imported/check_round_grey.svg-18a3db5615281167b4617dfd470cfd48.svgtex"]
+dest_files=["res://.godot/imported/check_round_grey.svg-18a3db5615281167b4617dfd470cfd48.dpitex"]
 
 [params]
 

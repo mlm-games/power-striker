@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://c584htdnh5gh5"
-path="res://.godot/imported/icon_checkmark.svg-c2e51a07dbe1bee7ac3e5bb1e86c30ab.svgtex"
+path="res://.godot/imported/icon_checkmark.svg-c2e51a07dbe1bee7ac3e5bb1e86c30ab.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/icon_checkmark.svg"
-dest_files=["res://.godot/imported/icon_checkmark.svg-c2e51a07dbe1bee7ac3e5bb1e86c30ab.svgtex"]
+dest_files=["res://.godot/imported/icon_checkmark.svg-c2e51a07dbe1bee7ac3e5bb1e86c30ab.dpitex"]
 
 [params]
 

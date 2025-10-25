@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://3r3ewqvhao3l"
-path="res://.godot/imported/button_rectangle_gradient.svg-e00de46ea1771352465feebf7a279318.svgtex"
+path="res://.godot/imported/button_rectangle_gradient.svg-e00de46ea1771352465feebf7a279318.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/button_rectangle_gradient.svg"
-dest_files=["res://.godot/imported/button_rectangle_gradient.svg-e00de46ea1771352465feebf7a279318.svgtex"]
+dest_files=["res://.godot/imported/button_rectangle_gradient.svg-e00de46ea1771352465feebf7a279318.dpitex"]
 
 [params]
 

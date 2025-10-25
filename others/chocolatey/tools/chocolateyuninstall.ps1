@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'smash-with-power'
-$softwareName = 'Smash-with-power*'
+$packageName = 'power-striker'
+$softwareName = 'power-striker*'
 $installDir = Join-Path $env:ProgramFiles $packageName
 
 # Remove the application files
@@ -18,4 +18,4 @@ if (Test-Path $shortcutFile) {
   Write-Host "Removed Start Menu shortcut"
 }
 
-Write-Host "Smash-with-power has been uninstalled"
+Write-Host "power-striker has been uninstalled"

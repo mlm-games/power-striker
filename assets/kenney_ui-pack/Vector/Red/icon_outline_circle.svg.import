@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dj663l33tthp5"
-path="res://.godot/imported/icon_outline_circle.svg-6497363df3d4c164333e1e95dc6612fd.svgtex"
+path="res://.godot/imported/icon_outline_circle.svg-6497363df3d4c164333e1e95dc6612fd.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/icon_outline_circle.svg"
-dest_files=["res://.godot/imported/icon_outline_circle.svg-6497363df3d4c164333e1e95dc6612fd.svgtex"]
+dest_files=["res://.godot/imported/icon_outline_circle.svg-6497363df3d4c164333e1e95dc6612fd.dpitex"]
 
 [params]
 

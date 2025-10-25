@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://fmh0p83r7qi8"
-path="res://.godot/imported/button_square_depth_flat.svg-14d0a84b8803eb2fe01607d31f7b8f95.svgtex"
+path="res://.godot/imported/button_square_depth_flat.svg-14d0a84b8803eb2fe01607d31f7b8f95.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/button_square_depth_flat.svg"
-dest_files=["res://.godot/imported/button_square_depth_flat.svg-14d0a84b8803eb2fe01607d31f7b8f95.svgtex"]
+dest_files=["res://.godot/imported/button_square_depth_flat.svg-14d0a84b8803eb2fe01607d31f7b8f95.dpitex"]
 
 [params]
 

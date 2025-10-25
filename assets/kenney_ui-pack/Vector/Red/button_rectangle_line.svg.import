@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://ck0iqwdy17t8m"
-path="res://.godot/imported/button_rectangle_line.svg-346737725c031b0ada8b1f2c1db83740.svgtex"
+path="res://.godot/imported/button_rectangle_line.svg-346737725c031b0ada8b1f2c1db83740.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/button_rectangle_line.svg"
-dest_files=["res://.godot/imported/button_rectangle_line.svg-346737725c031b0ada8b1f2c1db83740.svgtex"]
+dest_files=["res://.godot/imported/button_rectangle_line.svg-346737725c031b0ada8b1f2c1db83740.dpitex"]
 
 [params]
 

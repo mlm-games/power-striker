@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://jo7sscsh8jdq"
-path="res://.godot/imported/star_outline.svg-aa46aca7cf117247239c84e1ef4dd127.svgtex"
+path="res://.godot/imported/star_outline.svg-aa46aca7cf117247239c84e1ef4dd127.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/star_outline.svg"
-dest_files=["res://.godot/imported/star_outline.svg-aa46aca7cf117247239c84e1ef4dd127.svgtex"]
+dest_files=["res://.godot/imported/star_outline.svg-aa46aca7cf117247239c84e1ef4dd127.dpitex"]
 
 [params]
 

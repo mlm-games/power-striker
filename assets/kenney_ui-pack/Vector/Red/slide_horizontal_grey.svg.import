@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://d2effsa47a1cg"
-path="res://.godot/imported/slide_horizontal_grey.svg-d77afa0652959cb0686bd6eb47c31607.svgtex"
+path="res://.godot/imported/slide_horizontal_grey.svg-d77afa0652959cb0686bd6eb47c31607.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/slide_horizontal_grey.svg"
-dest_files=["res://.godot/imported/slide_horizontal_grey.svg-d77afa0652959cb0686bd6eb47c31607.svgtex"]
+dest_files=["res://.godot/imported/slide_horizontal_grey.svg-d77afa0652959cb0686bd6eb47c31607.dpitex"]
 
 [params]
 

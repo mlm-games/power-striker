@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://bklkcjuc8bknf"
-path="res://.godot/imported/check_square_color.svg-3f3ae642e8975489de90c462af7f0bba.svgtex"
+path="res://.godot/imported/check_square_color.svg-3f3ae642e8975489de90c462af7f0bba.dpitex"
 
 [deps]
 
 source_file="res://assets/kenney_ui-pack/Vector/Red/check_square_color.svg"
-dest_files=["res://.godot/imported/check_square_color.svg-3f3ae642e8975489de90c462af7f0bba.svgtex"]
+dest_files=["res://.godot/imported/check_square_color.svg-3f3ae642e8975489de90c462af7f0bba.dpitex"]
 
 [params]
 
