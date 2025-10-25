@@ -1,9 +1,9 @@
-name: smash-with-power
+name: power-smash
 base: core22
 version: '0.1.0'
-summary: <PlaceHolderShortDesc>
+summary: Hit the block at the right time
 description: |
-  <PlaceHolderLongDesc>
+  A game where you watch a wooden box fly!
 
 grade: stable
 confinement: strict
@@ -13,23 +13,13 @@ architectures:
   - build-on: arm64
 
 apps:
-  smash-with-power:
-    command: smash-with-power
+  power-smash:
+    command: power-smash
     extensions: [gnome]
-    plugs:
-      - home
-      - removable-media
-      - network
-      - opengl
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - unity7
-    desktop: others/snap/gui/smash-with-power.desktop
-
+    plugs: [home, network, removable-media, unity7]
+      
 parts:
-  smash-with-power:
+  power-smash:
     plugin: dump
     source: ./builds/
     source-type: local
@@ -42,8 +32,8 @@ parts:
       - libpulse0
     override-build: |
       snapcraftctl build
-      chmod +x $SNAPCRAFT_PART_INSTALL/smash-with-power
+      chmod +x $SNAPCRAFT_PART_INSTALL/power-smash
 
 layout:
-  /usr/share/smash-with-power:
-    bind: $SNAP/usr/share/smash-with-power
+  /usr/share/power-smash:
+    bind: $SNAP/usr/share/power-smash
