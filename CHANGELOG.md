@@ -1,3 +1,10 @@
+## v0.2.5
+
+- update to 4.5.1
+- Add icon to fastlane
+- Create snap-upload.yml
+
+
 ## v0.2.4
 
 
