@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Smash-with-power
-GenericName=Smash-with-power
-Comment=<PlaceholderShortDesc>
-Exec=smash-with-power %F
-Icon=io.github.mlm_games.smash-with-power
-Terminal=false
-Type=Application
-Categories=<PlaceholderCategories>

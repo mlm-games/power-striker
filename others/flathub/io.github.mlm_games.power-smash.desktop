@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Power Smash!
+GenericName=PowerSmash
+Comment=Watch a box fly!
+Exec=power-smash %F
+Icon=io.github.mlm_games.power-smash
+Terminal=false
+Type=Application
+Categories=Game;Amusement
