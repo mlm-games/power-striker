@@ -32,12 +32,12 @@ jobs:
       - name: Fetch Linux binary (with fallback)
         run: |
           set -euo pipefail
-          mkdir -p others/snap/builds others/snap/gui
-          cp others/flathub/io.github.mlm_games.power-striker.desktop others/snap/gui/power-striker.desktop
-          cp fastlane/metadata/android/en-US/images/icon.png others/snap/gui/icon.png
+          mkdir -p others/snap/builds others/snap/snap/gui
+          cp others/flathub/io.github.mlm_games.power-striker.desktop others/snap/snap/gui/power-striker.desktop
+          cp fastlane/metadata/android/en-US/images/icon.png others/snap/snap/gui/icon.png
           sed -i -e 's|^Exec=.*|Exec=power-striker|' \
                  -e 's|^Icon=.*|Icon=${SNAP}/meta/gui/icon.png|' \
-                 others/snap/gui/power-striker.desktop
+                 others/snap/snap/gui/power-striker.desktop
           curl -fL "https://github.com/${{ github.repository }}/releases/download/${{ inputs.version_name }}/power-striker.x86_64" -o others/snap/builds/power-striker
           chmod +x others/snap/builds/power-striker
 
